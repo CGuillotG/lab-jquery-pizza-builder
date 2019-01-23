@@ -25,6 +25,8 @@ let prices = $('.panel.price li')
 
 sauce.removeClass("sauce-white");
 crust.removeClass("crust-gluten-free");
+b_sauce.removeClass('active')
+b_crust.removeClass('active')
 p_sauce.css('display','none')
 p_crust.css('display','none')
 
@@ -40,6 +42,7 @@ if(greenp.css("visibility") !== "hidden") {
     b_greenp.addClass("active")
     num += 1
 }
+
 
 
 
@@ -99,9 +102,11 @@ b_sauce.on("click", function() {
   sauce.toggleClass("sauce-white");
   if(p_sauce.css('display')==='block'){
     p_sauce.css('display','none')
+    b_sauce.removeClass('active')
     num -= 3
   } else {
     p_sauce.css('display','block')
+    b_sauce.addClass('active')
     num += 3
   }
   updatePrice()
@@ -111,9 +116,11 @@ b_crust.on("click", function() {
   crust.toggleClass("crust-gluten-free");
   if(p_crust.css('display')==='block'){
     p_crust.css('display','none')
+    b_crust.removeClass('active')
     num -= 5
   } else {
     p_crust.css('display','block')
+    b_crust.addClass('active')
     num += 5
   }
   updatePrice()
